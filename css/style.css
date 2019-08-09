@@ -1,0 +1,13 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  font-family: 'SF Pro Text', 'Roboto', Helvetica, sans-serif;
+}
+
+.statusbar {
+  background-color: blue;
+  width: 475px;
+}
