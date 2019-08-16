@@ -4,10 +4,278 @@
 
 body {
   font-size: 12px;
-  font-family: 'SF Pro Text', 'Roboto', Helvetica, sans-serif;
+  font-family: 'Oswald', 'SF Pro Display', 'Roboto', Helvetica, sans-serif;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.statusbar {
-  background-color: blue;
-  width: 475px;
+/*STATUS AND SEARCH BARS*/
+.statbar {
+  background-image: url('../images/status_bar.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #074C9C;
+  padding: 2%;
+  width: 100%;;   /*This line may not be needed*/
+}
+
+.searchbar {
+  background-color: #074C9C;
+  padding: 0.5% 0;
+  width: 100%;;
+}
+
+input {
+  width: 95%;
+  padding: 0.33em;
+  padding-left: 1.5em;
+  color: #8E8E93;
+  font-family: 'SF Pro Display';
+  border-radius: 10px;
+  margin: 2.5%;
+  display: inline-block;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-size: 1.5em;
+}
+
+/*MAP REGION, INCLUDING ALL ITS ICONS*/
+.map {
+  z-index: 1;
+  position: relative; /*This parent element should be relative, so its children can be placed absolutely.*/
+}
+.map img {
+  width: 100%;;
+  position: relative;
+}
+
+#settings, #gpspin, #busstop, #movingbus, #stopname {
+  position: absolute;
+  height: auto;
+  z-index: 3;
+}
+
+#settings {
+  width: 12.5%;
+  top: 2.5%;
+  left: 1.5%;
+}
+
+#gpspin {
+  width: 26%;
+  top: 30%;
+  left: 42%;
+  transform: rotate(-120deg);
+  z-index: 30;
+}
+
+#busstop {
+  width: 9.5%;
+  top: 45%;
+  left: 50%;
+}
+
+#movingbus {
+  width: 5.15%;
+  top: 65.5%;
+  left: 17.5%;
+  transform: rotate(223.85deg);
+}
+
+#stopname {
+  width: 30%;
+  top: 52.5%;
+  left: 52%;
+}
+
+/*BUS, RAIL, TAXI ICONS*/
+.selectionarea {
+  background-color: #095AB8;
+  text-align: center;
+  width: 100%;;
+  margin-top: -5em;
+  z-index: 55;
+  position: absolute;
+}
+
+.buttons button {
+  width: 32.75%;
+  display: inline-block;
+  background-color: #074C9C;
+  border: 0px;
+  color: #D8F1F6;
+  vertical-align: top;
+}
+
+button {
+  height: 65px;
+  text-align: left;
+  padding: 0;
+}
+
+.box {
+  background-color: #074C9C;
+  height: 100%;
+}
+
+#railb, #taxib {
+  height: 62px;
+}
+
+svg {
+  fill: #D8F1F6;
+  color: #D8F1F6;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+#busb {
+  float: left;
+}
+#busb .box {
+  background-color: #D8F1F6;
+}
+#busb svg {
+  padding: 6px;
+  fill: #074C9C;
+  color: #074C9C;
+}
+#taxib {
+  float: right;
+}
+
+svg:hover, button:hover, .box:hover {
+  fill: #074C9C;
+  background-color: #D8F1F6;
+}
+
+
+/*SCHEDULE INFO*/
+.container {
+  position: absolute;
+  width: 100%;
+}
+
+.direction {
+  background: #095AB8;
+  color: white;
+  text-align: center;
+  border-top: 5vw solid #114793;
+}
+
+/*Parent element*/ .route {
+  display: inline-block;
+  font-size: 5vw;
+  width: 95%;
+  padding: 100px auto;
+  border-top: 2px solid #114793;
+}
+
+h3 {
+  font-family: 'Overpass';
+  font-size: 5vw;
+  text-align: left;
+  padding: 5% 2%;
+  letter-spacing: 0.15em;
+  font-variant: small-caps;
+  font-weight: 600;
+}
+
+/*Child element*/ .text {
+  width: 45%;
+  display: inline-block;
+  margin: 3% 1%;
+  vertical-align: bottom;
+}
+
+span {
+  font-weight: 300;
+  font-size: 4vw;
+  letter-spacing: 1px;
+}
+
+.number {
+  font-size: 9.5vw;
+  font-family: 'Overpass';
+}
+
+.part1 {
+  text-align: left;
+  line-height: 8vw;
+}
+.part2 {
+  text-align: right;
+  line-height: 6vw;
+}
+
+.signal, .star {
+  width: 6vw;
+  height: auto;
+}
+.star {
+  padding: 0.5%;
+  margin-left: -27.5%;
+  margin-top: 6.5%;
+  position: absolute;
+  z-index: 3;
+  fill : none;
+}
+
+.route:hover {
+  background: #1BC1E2;
+  color: #074C9C;
+}
+.star:hover {
+  fill: #E2A920;
+  background: #1BC1E2;
+  stroke: #E2A920;
+}
+
+/*iPad SCREEN RANGES (referenced from Figma frames selection)*/
+@media screen and (min-width: 768px) {    /*iPad Mini*/
+  body, .map, .selectionarea, .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 834px) {    /*iPad Pro 10.5" is in between this range, at appx 834px.*/
+  button {
+    height: 80px;
+  }
+  #railb, #taxib {
+    height: 75px;
+  }
+}
+
+@media screen and (min-width: 1024px) {   /*iPad Pro 12.9"*/
+  .text {
+    width: 430px;
+    margin: 30px 10px;
+  }
+  h3 {
+    font-size: 51px;
+  }
+  p {
+    font-size: 51px;
+  }
+  span {
+    font-size: 41px;
+  }
+  .number {
+    font-size: 96px;
+  }
+  .direction {
+    border-top: 50px solid #114793;
+  }
+  .part1 {
+    line-height: 83px;
+  }
+  .part2 {
+    line-height: 62px;
+  }
+  .signal, .star {
+    width: 61.5px;
+  }
 }
