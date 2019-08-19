@@ -4,7 +4,7 @@
 
 body {
   font-size: 12px;
-  font-family: 'Oswald', 'SF Pro Display', 'Roboto', Helvetica, sans-serif;
+  font-family: 'Oswald', 'SF Pro Display', 'Roboto', 'Trebuchet MS', sans-serif;
   margin: 0 auto;
   width: 100%;
 }
@@ -31,7 +31,7 @@ input {
   padding: 0.33em;
   padding-left: 1.5em;
   color: #8E8E93;
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Display', 'Segoe UI', Helvetica, sans-serif;
   border-radius: 10px;
   margin: 2.5%;
   display: inline-block;
@@ -146,7 +146,7 @@ svg {
   float: right;
 }
 
-svg:hover, button:hover, .box:hover {
+svg:hover, button:hover, .box:hover {   /*Can switch these commands to 'active' and they would trigger when you click on the designated elements.*/
   fill: #074C9C;
   background-color: #D8F1F6;
 }
@@ -173,21 +173,21 @@ svg:hover, button:hover, .box:hover {
   border-top: 2px solid #114793;
 }
 
+/*Child element*/ .text {
+  width: 45%;
+  display: inline-block;
+  margin: 3% 1%;
+  vertical-align: bottom;
+}
+
 h3 {
-  font-family: 'Overpass';
+  font-family: 'Overpass', Arial, sans-serif;
   font-size: 5vw;
   text-align: left;
   padding: 5% 2%;
   letter-spacing: 0.15em;
   font-variant: small-caps;
   font-weight: 600;
-}
-
-/*Child element*/ .text {
-  width: 45%;
-  display: inline-block;
-  margin: 3% 1%;
-  vertical-align: bottom;
 }
 
 span {
@@ -198,16 +198,18 @@ span {
 
 .number {
   font-size: 9.5vw;
-  font-family: 'Overpass';
+  font-family: 'Overpass', Arial, sans-serif;
 }
 
 .part1 {
   text-align: left;
   line-height: 8vw;
+  font-family: 'Oswald', 'Trebuchet MS', sans-serif;
 }
 .part2 {
   text-align: right;
   line-height: 6vw;
+  font-family: 'Oswald', 'Segoe UI', sans-serif;
 }
 
 .signal, .star {
